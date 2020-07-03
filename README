@@ -29,7 +29,6 @@ block.c: Code for the F-function
 block.h: structs for the 64-bit blocks in block cipher
 feistel.c: Code for the Feistel Network
 globals.h: Global variables and functions used in various parts of program
-input.txt: Sample input to cipher (Not important)
 key.c:  Code for the Key-Schedule
 key.h: key struct 
 key.txt Sample key for cipher (Not important)
