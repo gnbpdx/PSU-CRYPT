@@ -1,0 +1,39 @@
+Author Name: Grant Baker
+Correspondence: gnb@pdx.edu
+
+PSU-CRYPT is a block-encryption algorithm based on Twofish and SKIPJACK.
+
+To build psu-crypt type make. The makefile enclosed compiles the program correctly.
+
+To run psu-crypt type ./psu-crypt [-options] [key_file] [input file]
+For basic functionality, if the key is stored in key.txt as an 80 bit hex, and the input is in input.txt:
+To encrypt: ./psu-crypt -f ciphertext.txt key.txt input.txt
+This will store the ciphertext in ciphertext.txt
+To decrypt: ./psu-crypt -df plaintext.txt key.txt ciphertext.txt
+This will store the original message in plaintext.txt
+More information on options:
+Options are used in a UNIX style.
+Command line options with no arguments:
+-s: Prints out subkeys to standard output
+-r: Prints out round information to standard ouput
+-d: Runs cipher in decryption mode
+-e: Runs cipher in encryption mode (This is the default setting)
+Command line options that require one argument:
+-b [arg]: The key is [arg] number of bits. Note, the key must be at least 64 bits for proper functionality
+-m [arg]: [arg] must be ECB, CBC, OFB, CFB, or CTR, and the cipher will run in the corresponding mode. ECB is the default mode.
+-f [arg]: Stores ciphertext or plaintext in file named [arg] depending on whether cipher is in encrypt or decrypt mode.
+-i [arg]: Gets initialization vector from file named [arg]. Note, it must be stored as a 64 bit hex. 
+
+Files that should be included:
+block.c: Code for the F-function
+block.h: structs for the 64-bit blocks in block cipher
+feistel.c: Code for the Feistel Network
+globals.h: Global variables and functions used in various parts of program
+input.txt: Sample input to cipher (Not important)
+key.c:  Code for the Key-Schedule
+key.h: key struct 
+key.txt Sample key for cipher (Not important)
+Makefile: Builds psu-crypt
+modes.c: Parse command line options and run various block modes
+README: Describes PSU-CRYPT project
+
