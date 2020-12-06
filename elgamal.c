@@ -288,8 +288,6 @@ int main(int argc, char** argv)
 			printf("Key generation has too many arguments\n");
 			exit(EXIT_FAILURE);
 		}
-		//unsigned int seed = atoi(argv[2]);
-		//srand(seed);
 		FILE* PRIVATE = fopen("prikey.txt", "w");
 		FILE* PUBLIC = fopen("pubkey.txt", "w");
 		int val = key_generation(PRIVATE, PUBLIC, 10);
