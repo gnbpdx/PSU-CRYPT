@@ -36,3 +36,33 @@ Makefile: Builds psu-crypt
 modes.c: Parse command line options and run various block modes
 README: Describes PSU-CRYPT project
 
+elgamal.c is a public key encryption/decryption based
+on the discrete logarithm problem called ElGamal. 
+
+To build my program you can compile by:
+gcc -std=c11 -o elgamal elgamal.c
+
+To run my program:
+To generate keys run the program as:
+./elgamal keygeneration 
+This will create 2 files called pubkey.txt and prikey.txt
+which denotes the public and private keys respectively.
+
+Encryption:
+The program assumes the file to be encrypted is in a file called ptext.txt,
+and the public key is in a file called pubkey.txt
+The program will generate a file called ctext.txt which is a sequence of 
+numbers representing the ciphertext.
+To run encryption:
+./elgamal encrypt
+
+Decryption:
+The program assumes the file to be decrypted is in a file called ctext.txt,
+and the private key is in a file called prikey.txt.
+The program will create a file called dtext.txt which is the decrypted 
+ciphertext.
+To run decryption:
+./elgamal decrypt
+
+
+
